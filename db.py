@@ -35,11 +35,19 @@ def add_veiculo(modelo, marca, cor, ano):
                 (modelo, marca, cor, ano))
     conn.commit()
 
-def excluir_veiculo():
-    cur = conn.cursor()
-    cur.execute()
 
 def listar_veiculos():
     cur = conn.cursor()
     cur.execute('select modelo, marca, cor, ano from veiculos')
-    return cur.fetchall()
+    return cur.fetchall()  # busca todas as linhas em uma tabela
+
+
+def atualizar_veiculos():
+    pass
+
+
+def excluir_veiculo(id):
+    # exclui o veiculo com base no id
+    cur = conn.cursor()
+    cur.execute('delete from veiculos where id = ?', (id,))
+    conn.commit()
