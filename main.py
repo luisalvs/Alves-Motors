@@ -11,3 +11,4 @@ def listar_veiculos():
         print(json.dumps(veiculo, indent=4))
 
 
+listar_veiculos()
